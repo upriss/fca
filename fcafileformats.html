@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+
+
+
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">FCA File Formats</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From fcastone</h3>
+			<div id="contentSub"></div>
+
+			<p>The aim of this section is to present and discuss commonly used file formats in FCA software. It may also serve as a platform to design new formats not yet implemented in any program.
+
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Formal_.28Binary.29_Context_Formats"><span class="tocnumber">1</span> <span class="toctext">Formal (Binary) Context Formats</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Burmeister"><span class="tocnumber">1.1</span> <span class="toctext">Burmeister</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Structure"><span class="tocnumber">1.1.1</span> <span class="toctext">Structure</span></a></li>
+<li class="toclevel-3"><a href="#Example"><span class="tocnumber">1.1.2</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Colibri"><span class="tocnumber">1.2</span> <span class="toctext">Colibri</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Example_2"><span class="tocnumber">1.2.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#ConExp"><span class="tocnumber">1.3</span> <span class="toctext">ConExp</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Example_3"><span class="tocnumber">1.3.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#CSV"><span class="tocnumber">1.4</span> <span class="toctext">CSV</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Example_4"><span class="tocnumber">1.4.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#FIMI"><span class="tocnumber">1.5</span> <span class="toctext">FIMI</span></a></li>
+<li class="toclevel-2"><a href="#Galicia"><span class="tocnumber">1.6</span> <span class="toctext">Galicia</span></a></li>
+<li class="toclevel-2"><a href="#Galicia2"><span class="tocnumber">1.7</span> <span class="toctext">Galicia2</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Example_5"><span class="tocnumber">1.7.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Anonymous_Formal_Context_Formats"><span class="tocnumber">2</span> <span class="toctext">Anonymous Formal Context Formats</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Anonymous_Burmeister"><span class="tocnumber">2.1</span> <span class="toctext">Anonymous Burmeister</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Example_6"><span class="tocnumber">2.1.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#FCALGS"><span class="tocnumber">2.2</span> <span class="toctext">FCALGS</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Example_7"><span class="tocnumber">2.2.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Many_Valued_Context_Formats"><span class="tocnumber">3</span> <span class="toctext">Many Valued Context Formats</span></a>
+<ul>
+<li class="toclevel-2"><a href="#CSV_2"><span class="tocnumber">3.1</span> <span class="toctext">CSV</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Lattice_Formats"><span class="tocnumber">4</span> <span class="toctext">Lattice Formats</span></a></li>
+<li class="toclevel-1"><a href="#Layout_Formats"><span class="tocnumber">5</span> <span class="toctext">Layout Formats</span></a></li>
+<li class="toclevel-1"><a href="#Other_Formats"><span class="tocnumber">6</span> <span class="toctext">Other Formats</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Formal_.28Binary.29_Context_Formats" id="Formal_.28Binary.29_Context_Formats"></a><h2> <span class="mw-headline">Formal (Binary) Context Formats</span></h2>
+<p>How to store formal contexts.
+</p>
+<a name="Burmeister" id="Burmeister"></a><h3> <span class="mw-headline"> Burmeister </span></h3>
+<p>This file format is the file format of Burmeisters ConImp</a>, and is supported by a number of programs. It is easily recognizable, human readable and small.
+</p><p>Burmeister's format is supported by ConImp</a>, ConExp</a>, 
+conexp-clj</a>.
+</p>
+<a name="Structure" id="Structure"></a><h4> <span class="mw-headline"> Structure </span></h4>
+<p>The file format is structured as follows:
+</p>
+<ul><li> the first line consists of a single "B"
+</li><li> the second line contains the name of the context (note that some programs ignore this)
+</li><li> the third and fourth line consist of the object and attribute count, respectively
+</li><li> after that, all objects and all attributes are listed, each on a separate line
+</li><li> finally, the context is given as a combination of <code>.</code> and <code>X</code>, each row on a separate line.
+</li></ul>
+<p>There are no restrictions on the context.
+</p>
+<a name="Example" id="Example"></a><h4> <span class="mw-headline"> Example </span></h4>
+<pre>B
+name
+2
+2
+a
+b
+1
+2
+.X
+XX
+</pre>
+<p>corresponds to the context
+</p>
+<pre>   | 1  2
+---+------
+ a | .  X 
+ b | X  X
+</pre>
+<a name="Colibri" id="Colibri"></a><h3> <span class="mw-headline"> Colibri </span></h3>
+<a name="Example_2" id="Example_2"></a><h4> <span class="mw-headline"> Example </span></h4>
+<pre> a: 1
+ b: 1,2
+</pre>
+<a name="ConExp" id="ConExp"></a><h3> <span class="mw-headline"> ConExp </span></h3>
+<a name="Example_3" id="Example_3"></a><h4> <span class="mw-headline"> Example </span></h4>
+<pre> &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ &lt;ConceptualSystem&gt;
+   &lt;Version MajorNumber="1" MinorNumber="0"/&gt;
+   &lt;Contexts&gt;
+     &lt;Context Type="Binary" Identifier="0"&gt;
+       &lt;Attributes&gt;
+         &lt;Attribute Identifier="1"&gt;
+           &lt;Name&gt;2&lt;/Name&gt;
+         &lt;/Attribute&gt;
+         &lt;Attribute Identifier="0"&gt;
+           &lt;Name&gt;1&lt;/Name&gt;
+         &lt;/Attribute&gt;
+       &lt;/Attributes&gt;
+       &lt;Objects&gt;
+         &lt;Object&gt;
+           &lt;Name&gt;a&lt;/Name&gt;
+           &lt;Intent&gt;
+             &lt;HasAttribute AttributeIdentifier="1"/&gt;
+           &lt;/Intent&gt;
+         &lt;/Object&gt;
+         &lt;Object&gt;
+           &lt;Name&gt;b&lt;/Name&gt;
+           &lt;Intent&gt;
+             &lt;HasAttribute AttributeIdentifier="0"/&gt;
+             &lt;HasAttribute AttributeIdentifier="1"/&gt;
+           &lt;/Intent&gt;
+         &lt;/Object&gt;
+       &lt;/Objects&gt;
+     &lt;/Context&gt;
+   &lt;/Contexts&gt;
+ &lt;/ConceptualSystem&gt;
+</pre>
+<p>corresponds to the context
+</p>
+<pre>   | 1 2 
+---+-----
+ a | . x
+ b | x x
+</pre>
+<a name="CSV" id="CSV"></a><h3> <span class="mw-headline"> CSV </span></h3>
+<a name="Example_4" id="Example_4"></a><h4> <span class="mw-headline"> Example </span></h4>
+<pre>a,2
+b,1
+b,2
+</pre>
+<a name="FIMI" id="FIMI"></a><h3> <span class="mw-headline"> FIMI </span></h3>
+<a name="Galicia" id="Galicia"></a><h3> <span class="mw-headline"> Galicia </span></h3>
+<a name="Galicia2" id="Galicia2"></a><h3> <span class="mw-headline"> Galicia2 </span></h3>
+<a name="Example_5" id="Example_5"></a><h4> <span class="mw-headline"> Example </span></h4>
+<pre> &lt;Galicia_Document&gt;
+   &lt;BinaryContext numberObj="2" numberAtt="2"&gt;
+     &lt;Name&gt;Context&lt;/Name&gt;
+     &lt;Object&gt;a&lt;/Object&gt;
+     &lt;Object&gt;b&lt;/Object&gt;
+     &lt;Attribute&gt;1&lt;/Attribute&gt;
+     &lt;Attribute&gt;2&lt;/Attribute&gt;
+     &lt;BinRel idxO="0" idxA="1"&gt;&lt;/BinRel&gt;
+     &lt;BinRel idxO="1" idxA="0"&gt;&lt;/BinRel&gt;
+     &lt;BinRel idxO="1" idxA="1"&gt;&lt;/BinRel&gt;
+   &lt;/BinaryContext&gt;
+ &lt;/Galicia_Document&gt;
+</pre>
+<a name="Anonymous_Formal_Context_Formats" id="Anonymous_Formal_Context_Formats"></a><h2> <span class="mw-headline">Anonymous Formal Context Formats</span></h2>
+<p>There are a number of context formats which are not able to store the correct names of objects and attributes of a given context. They are normally used to do heavyweight computations, where the translation of the computed result to the actual result can be done afterwards.
+</p>
+<a name="Anonymous_Burmeister" id="Anonymous_Burmeister"></a><h3> <span class="mw-headline"> Anonymous Burmeister </span></h3>
+<p>This file format does not really exist, it's only some idea to have an unrestricted anonymous format for formal contexts.
+</p>
+<a name="Example_6" id="Example_6"></a><h4> <span class="mw-headline"> Example </span></h4>
+<pre> A
+ .X
+ XX
+</pre>
+<a name="FCALGS" id="FCALGS"></a><h3> <span class="mw-headline"> FCALGS </span></h3>
+<a name="Example_7" id="Example_7"></a><h4> <span class="mw-headline"> Example </span></h4>
+<pre> 2
+ 1 2
+</pre>
+<a name="Many_Valued_Context_Formats" id="Many_Valued_Context_Formats"></a><h2> <span class="mw-headline">Many Valued Context Formats</span></h2>
+<p>How to store many-valued contexts. Should we also discuss SQL (relational databases) here?
+</p>
+<a name="CSV_2" id="CSV_2"></a><h3> <span class="mw-headline"> CSV </span></h3>
+<a name="Lattice_Formats" id="Lattice_Formats"></a><h2> <span class="mw-headline">Lattice Formats</span></h2>
+<p>How to store lattice (are there a lot of programs around which can store concepts lattices separately?)
+</p>
+<a name="Layout_Formats" id="Layout_Formats"></a><h2> <span class="mw-headline">Layout Formats</span></h2>
+<p>How to store images of lattices. (I don't know whether this is appropriate to separate this from the lattice formats, in particular ConExp does not do this)
+</p>
+<a name="Other_Formats" id="Other_Formats"></a><h2> <span class="mw-headline">Other Formats</span></h2>
+<p>Everything else one could store/dump in/to file(s), as maybe implications/association-rules, ...
+</p>
+
+
+<div class="printfooter">
+Retrieved from "<a href="http://sourceforge.net/apps/mediawiki/fcastone/index.php?title=FCA_File_Formats">http://sourceforge.net/apps/mediawiki/fcastone/index.php?title=FCA_File_Formats</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+</body></html>

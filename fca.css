@@ -1,0 +1,7 @@
+h3 {color:darkblue}
+h3.title {color:darkblue; text-align: center; margin-top: 0.3in; margin-bottom: 0.3in}
+h4.blue {color:darkblue}
+hr {color:darkblue; background-color:darkblue; height: 3px;}
+hr.pale {color:grey; background-color:grey; height: 1px;}
+div.blockitem {color:darkblue; font-weight:bold; margin-top: 0.2in}
+body {background-color: #FFFFFF;}
